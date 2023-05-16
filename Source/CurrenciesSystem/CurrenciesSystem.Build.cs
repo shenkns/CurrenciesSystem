@@ -27,7 +27,10 @@ public class CurrenciesSystem : ModuleRules
 			{
 				"CoreUObject",
 				"Engine",
-				"LogSystem"
+				"LogSystem",
+				"DataSystem",
+				"SaveLoadSystem",
+				"ManagersSystem"
 			}
 		);
 		
@@ -36,7 +39,8 @@ public class CurrenciesSystem : ModuleRules
 			{
 				"LogSystem",
 				"DataSystem",
-				"SaveLoadSystem"
+				"SaveLoadSystem",
+				"ManagersSystem"
 			}
 		);
 	}

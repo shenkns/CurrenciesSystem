@@ -24,6 +24,10 @@
 			"Enabled": true
 		},
 		{
+			"Name": "ManagersSystem",
+			"Enabled": true
+		},
+		{
 			"Name": "DataSystem",
 			"Enabled": true
 		},
