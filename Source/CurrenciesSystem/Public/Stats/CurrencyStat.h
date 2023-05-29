@@ -22,7 +22,7 @@ public:
 
 protected:
 
-	UPROPERTY(EditDefaultsOnly, Category = "Stats|Currency")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Stats|Currency")
 	TMap<UCurrencyData*, int> Currencies;
 
 public:
