@@ -2,11 +2,13 @@
 
 #include "Stats/CurrencyStat.h"
 
-#include "LogSystem.h"
+#include "Log.h"
 #include "Managers/StatsManager.h"
 #include "Data/CurrencyData.h"
+#include "Log/Details/LocalLogCategory.h"
 #include "Module/CurrenciesSystemModule.h"
-#include "Module/CurrenciesSystemSettings.h"
+
+DEFINE_LOG_CATEGORY_LOCAL(LogCurrenciesSystem);
 
 int UCurrencyStat::GetCurrency(UCurrencyData* Currency) const
 {
@@ -42,10 +44,7 @@ bool UCurrencyStat::SetCurrency(UCurrencyData* Currency, int Amount)
 		GetManager()->SaveStats();
 	}
 
-	DEBUG_MESSAGE(GetDefault<UCurrenciesSystemSettings>()->bShowDebugMessages,
-		LogCurrenciesSystem,
-		"%s Changed To %d, Now %d", *Currency->GetName(), Delta, FMath::Max(0, Amount)
-	)
+	LOG(Display, "{} Changed To {}, Now {}", *Currency->GetName(), Delta, FMath::Max(0, Amount));
 	
 	OnCurrencyChange.Broadcast(Currency, FMath::Max(0, Amount), Delta);
 
